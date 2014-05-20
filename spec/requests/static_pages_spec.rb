@@ -1,15 +1,23 @@
 require 'spec_helper'
+describe "Static pages" do
+	describe "Home page" do
+    	it "should have Twitter clone in the h1" do
+			visit '/static_pages/home'
+     		expect(page).to have_content("Twitter Clone")
+    	end
+	end
 
-describe "Home page" do
-    it "should have Twitter clone in the h1" do
-		visit '/static_pages/home'
-     	expect(page).to have_content("Twitter Clone")
-    end
-end
+	describe "Help page" do
+		it "should have the content 'Help'" do
+			visit '/static_pages/help'
+			expect(page).to have_content('Help')
+		end
+	end
 
-describe "Help page" do
-	it "should have the content 'Help'" do
-		visit '/static_pages/help'
-		expect(page).to have_content('Help')
+	describe "About page" do
+		it "should have the content 'About Us'" do
+			visit '/static_pages/about'
+			expect(page).to have_content('About Us')
+		end
 	end
 end
