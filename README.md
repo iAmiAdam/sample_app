@@ -2,12 +2,14 @@ Build a twitterish app for practice, I messed up last time so decided to redo wi
 
 I have already covered;
 * Creating rails projects (Obviously)
+* Deploying to Heroku
 * Using gems
 * Routes
 * MVC
 * Creating test specs
 * Test Driven Development
 * Creating static pages
+* Using Guard and Spork
 * Using Bootstrap
 * Advanced routes and dynamic routes
 * Refactoring test spec using utilities
