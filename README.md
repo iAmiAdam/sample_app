@@ -26,3 +26,6 @@ I have already covered;
 * Using Factories in rspec tests
 * Strong parameters
 * Flash and error/success messages
+* Resource routing
+* Sessions
+* Forms and submissions
