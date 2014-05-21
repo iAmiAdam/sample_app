@@ -29,3 +29,4 @@ I have already covered;
 * Resource routing
 * Sessions
 * Forms and submissions
+* Cookies in rails
