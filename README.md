@@ -25,4 +25,4 @@ I have already covered;
 * Using full REST routes
 * Using Factories in rspec tests
 * Strong parameters
-* Flash ans error/success messages
+* Flash and error/success messages
