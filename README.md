@@ -11,6 +11,8 @@ I have already covered;
 * Creating static pages
 * Using Guard and Spork
 * Using Bootstrap
+* Using layout shims and partials
+* Sassing up stylesheets
 * Advanced routes and dynamic routes
 * Refactoring test spec using utilities
 * Added dynamic 'users' controller
