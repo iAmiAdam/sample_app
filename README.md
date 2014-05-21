@@ -13,6 +13,7 @@ I have already covered;
 * Using Bootstrap
 * Using layout shims and partials
 * Sassing up stylesheets
+* Nested CSS
 * Advanced routes and dynamic routes
 * Refactoring test spec using utilities
 * Added dynamic 'users' controller
@@ -23,3 +24,4 @@ I have already covered;
 * Uniqueness validation and testing thereof
 * Using full REST routes
 * Using Factories in rspec tests
+* Strong parameters
