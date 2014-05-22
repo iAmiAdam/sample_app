@@ -8,6 +8,7 @@ I have already covered;
 * MVC
 * Creating test specs
 * Test Driven Development
+* Using capybara to test forms
 * Creating static pages
 * Using Guard and Spork
 * Using Bootstrap
@@ -31,3 +32,4 @@ I have already covered;
 * Forms and submissions
 * Cookies in rails
 * Cucumber and BDD development
+* Updating Attributes
