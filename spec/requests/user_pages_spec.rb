@@ -76,7 +76,6 @@ describe "UserPages" do
 
     describe "with invalid information" do
       before { click_button "Save changes" }
-
       it { should have_content('error') }
     end
   end
