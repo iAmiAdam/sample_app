@@ -38,3 +38,4 @@ I have already covered;
 * Authorization and limiting access
 * Test data using faker
 * Pagination
+* Action filters
