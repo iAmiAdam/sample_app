@@ -33,3 +33,4 @@ I have already covered;
 * Cookies in rails
 * Cucumber and BDD development
 * Updating Attributes
+* Using HTTP requests in rspec
