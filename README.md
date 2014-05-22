@@ -35,3 +35,6 @@ I have already covered;
 * Updating Attributes
 * Using HTTP requests in rspec
 * Friendly Forwarding
+* Authorization and limiting access
+* Test data using faker
+* Pagination
