@@ -2,9 +2,10 @@ require 'spec_helper'
 
 describe "UserPages" do
   subject { page }
+  let(:user) { FactoryGirl.create(:user) }
 
   describe "profile page" do
-    let(:user) {FactoryGirl.create(:user) }
+    #let(:user) { FactoryGirl.create(:user) }
     before { visit user_path(user) }
 
     it { should have_content(user.name) }
@@ -30,7 +31,6 @@ describe "UserPages" do
 
       describe "after submission" do
         before { click_button submit }
-
         it { should have_title('Sign up') }
         it { should have_content('error') }
       end
