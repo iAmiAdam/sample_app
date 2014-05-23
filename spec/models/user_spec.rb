@@ -2,12 +2,13 @@ require 'spec_helper'
 
 describe User do
   
-  before { @user = User.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar") }
+  before { @user = User.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar", username: "Example") }
 
   subject { @user }
 
   it { should respond_to(:name) }
   it { should respond_to(:email) }
+  it { should respond_to(:username) }
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
@@ -51,6 +52,24 @@ describe User do
   	it { should_not be_valid }
   end
 
+  describe "when username is not present" do
+    before {@user.username = " "}
+    it { should_not be_valid }
+  end
+
+  describe "when username is invalid" do
+
+    describe "because username is too short" do
+      before { @user.username = "a" }
+      it { should_not be_valid }
+    end
+
+    describe "when username is too long" do
+      before {@user.username = "a" * 21}
+      it { should_not be_valid }
+    end
+  end
+
   describe "when email format is invalid" do
   	it "should be invalid" do
   		addresses = %w[user@foo,com user_at_foo.org example.user@foo. foo@bar_baz.com foo@bar+baz.com foo@bar..com]
@@ -82,7 +101,7 @@ describe User do
 
   describe "when password doesn't match confirmation" do
   	before do
-  		@user = User.new(name: "Example User", email: "user@example.com", password: " ", password_confirmation: " ")
+  		@user = User.new(name: "Example User", email: "user@example.com", password: " ", password_confirmation: " ", username: "Example")
   	end
   	it { should_not be_valid }
   end
