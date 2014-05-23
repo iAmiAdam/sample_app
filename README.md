@@ -22,6 +22,7 @@ I have already covered;
 * Added user model
 * Using annotate to make my life easier
 * Basic format validation and testing of the validation
+* Using regex
 * Uniqueness validation and testing thereof
 * Using full REST routes
 * Using Factories in rspec tests

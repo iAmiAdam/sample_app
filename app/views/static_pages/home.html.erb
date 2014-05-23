@@ -1,24 +1,5 @@
 <% if signed_in? %>
-	<div class="row">
-		<aside class="span4">
-			<section>
-				<%= render 'shared/user_info' %>
-			</section>
-			<section>
-				<%= render 'shared/micropost_form' %>
-			</section>
-		</aside>
-	<div class="span8">
-		<h3>Feed</h3>
-		<%= render 'shared/feed' %>
-	</div>
-</div>
+	<%= render 'signedin_home' %>
 <% else %> 
-	<div class="center hero-unit">
-		<h1>Welcome to my Twitter Clone</h1>
-
-		<h2> We are currently in development.</h2>
-
-		<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-	</div>
+	<%= render 'not_home' %>
 <% end %>
