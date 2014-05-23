@@ -41,3 +41,4 @@ I have already covered;
 * Pagination
 * Action filters
 * Database relationships
+* Using Ajax + Javascript
