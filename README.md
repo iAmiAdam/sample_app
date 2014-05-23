@@ -39,3 +39,4 @@ I have already covered;
 * Test data using faker
 * Pagination
 * Action filters
+* Database relationships

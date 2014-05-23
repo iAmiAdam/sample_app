@@ -64,8 +64,8 @@ class UsersController < ApplicationController
 
     def already_signed_in
       if signed_in?
-      flash[:notice] = "You're already signed in, silly!"
-      redirect_to root_path
+        flash[:notice] = "You're already signed in, silly!"
+        redirect_to root_path
       end
     end
 end
