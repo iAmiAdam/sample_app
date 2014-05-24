@@ -1,1 +1,3 @@
-$("#microposts").html('<%= @user.microposts.count %>')
+$("#microposts").html("<%= current_user.microposts.count %>");
+$("#new_form").html("<%= j render 'shared/micropost_form' %>");
+$(".microposts").html("<%= javascript_escape(render partial: 'shared/feed', collection: current_user.feed) %>");

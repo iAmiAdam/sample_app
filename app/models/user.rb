@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
 	# A user can have many microposts, they belong to the user so are destroyed if a user is destroyed.
 	has_many :microposts, dependent: :destroy
-
 	has_many :relationships, foreign_key: "follower_id", dependent: :destroy
 	has_many :followed_users, through: :relationships, source: :followed
 	has_many :reverse_relationships, foreign_key: "followed_id", class_name: "Relationship", dependent: :destroy
@@ -37,6 +36,10 @@ class User < ActiveRecord::Base
 
 	def unfollow!(other_user)
 		relationships.find_by(followed_id: other_user.id).destroy
+	end
+
+	def to param
+		"#{username}"
 	end
 
 	private

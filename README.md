@@ -42,3 +42,7 @@ I have already covered;
 * Action filters
 * Database relationships
 * Using Ajax + Javascript
+
+Features I've added -
+* Usernames
+* Ajax Micropost adding.
