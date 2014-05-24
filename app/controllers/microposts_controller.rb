@@ -6,16 +6,23 @@ class MicropostsController < ApplicationController
 		@micropost = current_user.microposts.build(micropost_params)
 		if @micropost.save
 			flash[:success] =  "Micropost created!"
-			redirect_to root_url
+			respond_to do |format|
+				format.html { redirect_to root_url }
+				format.js
+			end
 		else
 			@feed_items = []
+			flash[:error] = "Failed to create micropost!"
 			render 'static_pages/home'
 		end
 	end
 
 	def destroy 
 		@micropost.destroy
-		redirect_to root_url
+		flash[:success] = "Micropost destroyed!"
+		respond_to do |format|
+			format.html redirect_to root_url
+
 	end
 
 	private
