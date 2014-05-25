@@ -1,3 +1,5 @@
-$("#microposts").html("<%= current_user.microposts.count %>");
-$("#new_form").html("<%= j render 'shared/micropost_form' %>");
-$(".microposts").html("<%= javascript_escape(render partial: 'shared/feed', collection: current_user.feed) %>");
+$("#microposts").html("<%= current_user.microposts.count %>")
+$("#new_post_form").html("<%= j render 'shared/micropost_form' %>")
+
+var html = "<%= j render partial: 'shared/feed_item', locals: {feed_item: @feed_item}  %>"
+$(html).prependTo(".microposts").effect("highlight", {}, 1000)

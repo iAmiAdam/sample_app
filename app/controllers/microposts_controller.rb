@@ -6,11 +6,12 @@ class MicropostsController < ApplicationController
 		@micropost = current_user.microposts.build(micropost_params)
 		if @micropost.save
 			flash[:success] = "Micropost Added!"
-			redirect_to root_url
-			#respond_to do |format|
-				#format.html { redirect_to root_url }
-				#format.js 
-			#end
+			@feed_items = current_user.feed.paginate(page: params[:page])
+			@feed_item = @micropost
+			respond_to do |format|
+				format.html { redirect_to root_url }
+				format.js 
+			end
 		else
 			@feed_items = []
 			flash[:error] = "Failed to create micropost!"
