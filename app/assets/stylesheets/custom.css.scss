@@ -20,6 +20,10 @@ $grayMediumLight: #eaeaea;
 	@include box_sizing;
 }
 
+.alert-success {
+	display: hidden;
+}
+
 /* universal */
 
 html {
