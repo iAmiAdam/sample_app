@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
 	validates :name, presence: true, length: { maximum: 50 }
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+[a-z]\.[a-z]+\z/i
 	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
-	validates :username, presence: true, length: { minimum: 3, maximum: 20 }
+	VALID_USERNAME_REGEX= /^[a-z][a-z0-9_\.]/i
+	validates :username, presence: true, format: {with: VALID_USERNAME_REGEX}, length: { minimum: 3, maximum: 20 }, uniqueness: {case_sensitive: false}
 	has_secure_password
 	validates :password, length: { minimum: 6 }
 
@@ -36,10 +37,6 @@ class User < ActiveRecord::Base
 
 	def unfollow!(other_user)
 		relationships.find_by(followed_id: other_user.id).destroy
-	end
-
-	def to param
-		"#{username}"
 	end
 
 	private
