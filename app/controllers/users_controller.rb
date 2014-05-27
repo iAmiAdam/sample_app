@@ -30,6 +30,7 @@ class UsersController < ApplicationController
   end 
 
   def edit
+    @user = current_user
   end
 
   def destroy
@@ -39,6 +40,7 @@ class UsersController < ApplicationController
   end 
 
   def update
+    @user = current_user
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
       redirect_to @user
@@ -68,7 +70,7 @@ class UsersController < ApplicationController
   	end
 
     def correct_user
-      @user = User.find(params[:id])
+      @user = User.ci_find('username', params[:username])
       redirect_to(root_path) unless current_user?(@user)
     end
 
