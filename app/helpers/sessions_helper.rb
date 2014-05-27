@@ -4,6 +4,9 @@ module SessionsHelper
 		cookies.permanent[:remember_token] = remember_token
 		user.update_attribute(:remember_token, User.digest(remember_token))
 		self.current_user = user
+		if user.verify == 0 then
+			flash[:notice] = "Don't forget to verify your email!"
+		end
 	end
 
 	def signed_in?

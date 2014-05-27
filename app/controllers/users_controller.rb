@@ -21,9 +21,11 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
   	if @user.save
+      token = verify_token @user
+      @user.update_attribute(:token, token)
       sign_in @user
       flash[:success] = "Welcome to my Twitter Clone!"
-      redirect_to @user
+      redirect_to root_url
   	else
   		render 'new'
   	end
@@ -46,6 +48,18 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       render 'edit'
+    end
+  end
+
+  def verify
+    @user = User.find_by token:  params[:token]
+    if @user then
+      @user.update_attribute(:verify, 1)
+      flash[:success] = "Email Verified!"
+      redirect_to root_path
+    else
+      flash[:error] = "There was an error, contact support."
+      redirect_to root_path
     end
   end
 
@@ -83,5 +97,9 @@ class UsersController < ApplicationController
         flash[:notice] = "You're already signed in, silly!"
         redirect_to root_path
       end
+    end
+
+    def verify_token(user)
+      token = Digest::MD5::hexdigest(user.email.downcase)
     end
 end

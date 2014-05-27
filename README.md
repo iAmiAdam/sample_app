@@ -46,3 +46,6 @@ I have already covered;
 Features I've added -
 * Usernames
 * Ajax Micropost adding.
+* Vanity URLS
+* Mailers
+* Email verification
