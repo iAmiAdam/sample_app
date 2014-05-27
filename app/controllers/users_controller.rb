@@ -25,6 +25,7 @@ class UsersController < ApplicationController
       @user.update_attribute(:token, token)
       sign_in @user
       flash[:success] = "Welcome to my Twitter Clone!"
+      flash[:notice] = "Don't forget to check your email and verify your email address"
       redirect_to root_url
   	else
   		render 'new'
