@@ -53,8 +53,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def forgot 
+    
+  end
+
+  def reset
+    @user = User.find_by token: params[:token]
+
+  end
+
   def verify
-    @user = User.find_by token:  params[:token]
+    @user = User.find_by token: params[:token]
     if @user then
       @user.update_attribute(:verify, 1)
       flash[:success] = "Email Verified!"
