@@ -19,7 +19,8 @@ SampleApp::Application.routes.draw do
   match '/contact', to: 'static_pages#contact', via: 'get'
   match '/:username', to: 'users#show', via: 'get' 
   match '/verify/:token', to: 'users#verify', via: 'get'
-  match '/forgot' to: 'users#forgot', via 'get'
+  match '/forgot' to: 'users#forgot', via: 'get'
+  match '/reset/:token' to: 'users#reset', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
