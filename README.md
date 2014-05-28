@@ -49,6 +49,7 @@ Features I've added -
 * Vanity URLS
 * Mailers
 * Email verification
+* Password reset
 
 A production environment can be viewed here; http://stark-tor-9695.herokuapp.com/
 I will be resetting the database until I'm fairly happy with it and won't be migrating users for a while though.
