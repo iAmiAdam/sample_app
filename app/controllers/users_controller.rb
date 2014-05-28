@@ -67,7 +67,9 @@ class UsersController < ApplicationController
 
   def reset
     @user = User.find_by token: params[:token]
-
+    @user.update_attribute(user_params)
+    flash[:success] = "Password Reset, you can now login."
+    redirect to root_path
   end
 
   def verify
