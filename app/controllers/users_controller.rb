@@ -54,7 +54,15 @@ class UsersController < ApplicationController
   end
 
   def forgot 
-    
+    @user = User.find_by email: params[:email]
+    if @user then
+      UserMailer.reset_password(@user)
+      flash[:success] = "Instructions to reset your password have been sent to your email."
+      redirect_to forgot_page
+    else
+      flash[:error] = "User account for the provided Email not found."
+      redirect_to forgot_page
+    end
   end
 
   def reset
@@ -91,7 +99,7 @@ class UsersController < ApplicationController
   private
 
   	def user_params
-  		params.require(:user).permit(:name, :email, :password, :password_confirmation, :username, :admin)
+  		params.require(:user).permit(:name, :email, :password, :password_confirmation, :username, :admin, :verify)
   	end
 
     def correct_user

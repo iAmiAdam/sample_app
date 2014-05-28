@@ -12,4 +12,10 @@ class UserMailer < ActionMailer::Base
   	@url = "#{root_url}/#{user.username}"
   	mail(to: current_user.email, subject: "You gained a follower!")
   end
+
+  def reset_password(user)
+    @user = user
+    @url = "#{root_url}/reset/#{user.verify}"
+    mail(to: @user.email, subject: "Reset your password")
+  end
 end
