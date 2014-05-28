@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+	<head>
+		<meta content="text/html"; charset='UTF-8' http-equiv='Content-Type' />
+	</head>
+	<body>
+		<h1>You have a new follower!</h1>
+		<%= gravatar_for @user, size: 52 %>
+		<a href="<%= @url %>"><%= "#{@user.name} | #{@user.username}" %></a>
+	</body>
+</html>

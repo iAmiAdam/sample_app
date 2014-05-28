@@ -17,9 +17,9 @@ I have already covered;
 * Nested CSS
 * Advanced routes and dynamic routes
 * Refactoring test spec using utilities
-* Added dynamic 'users' controller
+* Adding controllers
 * Refactored my test spec even more using shared tests
-* Added user model
+* Adding models
 * Using annotate to make my life easier
 * Basic format validation and testing of the validation
 * Using regex
@@ -49,3 +49,6 @@ Features I've added -
 * Vanity URLS
 * Mailers
 * Email verification
+
+A production environment can be viewed here; http://stark-tor-9695.herokuapp.com/
+I will be resetting the database until I'm fairly happy with it and won't be migrating users for a while though.
